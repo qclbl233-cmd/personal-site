@@ -1,0 +1,162 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+* {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M8,4 L8,24 L13,19 L17,27 L21,25 L17,17 L24,17 Z' fill='white' stroke='%23222' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E") 8 4, auto !important;
+}
+
+/* 统一的 Bento 卡片样式 */
+@layer components {
+  .bento-card {
+    @apply rounded-3xl border border-white/20 dark:border-white/10 shadow-lg dark:shadow-none hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 overflow-hidden relative backdrop-blur-md;
+  }
+}
+
+/* 长文章 Markdown 正文排版（动态详情页用） */
+.signal-prose {
+  line-height: 1.9;
+  font-size: 0.925rem;
+}
+.signal-prose h2 {
+  font-size: 1.35rem;
+  font-weight: 900;
+  margin: 2rem 0 0.75rem;
+  letter-spacing: 0.05em;
+  color: #1b2554;
+}
+.dark .signal-prose h2 {
+  color: #dbeafe;
+}
+.signal-prose h3 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin: 1.5rem 0 0.6rem;
+}
+.signal-prose p {
+  margin-bottom: 1rem;
+}
+.signal-prose a {
+  color: rgb(59 130 246);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.signal-prose strong {
+  font-weight: 800;
+}
+.signal-prose code {
+  background: rgba(59, 130, 246, 0.08);
+  padding: 0.15rem 0.4rem;
+  border-radius: 0.375rem;
+  font-size: 0.85em;
+}
+.signal-prose pre {
+  background: #0a1024;
+  color: #e2e8f0;
+  padding: 1rem;
+  border-radius: 1rem;
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+.signal-prose pre code {
+  background: transparent;
+  padding: 0;
+}
+.signal-prose blockquote {
+  border-left: 3px solid rgb(59 130 246 / 0.5);
+  padding-left: 1rem;
+  color: rgb(100 116 139);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+.dark .signal-prose blockquote {
+  color: rgb(191 219 254);
+}
+.signal-prose img {
+  border-radius: 1rem;
+  margin: 0.5rem 0;
+  max-width: 100%;
+}
+.signal-prose ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+.signal-prose ol {
+  list-style: decimal;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+.signal-prose hr {
+  border-color: rgb(59 130 246 / 0.15);
+  margin: 1.5rem 0;
+}
+
+/* 主页装饰动画（向日葵 + 星空） */
+@keyframes sunflower-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes sway {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+@keyframes breath {
+  0%, 100% { opacity: 0.45; transform: scale(1); }
+  50% { opacity: 0.95; transform: scale(1.05); }
+}
+@keyframes twinkle {
+  0%, 100% { opacity: 0.1; }
+  50% { opacity: 1; }
+}
+@keyframes shoot {
+  0% { transform: translateX(0); opacity: 0; }
+  4% { opacity: 1; }
+  80%, 100% { transform: translateX(-400px); opacity: 0; }
+}
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes marquee {
+  0% { transform: translateX(320px); }
+  100% { transform: translateX(-320px); }
+}
+
+/* CD 机音量滑条（自定义轨道 + 滑块 + 绿色填充进度） */
+.volume-slider {
+  --track: rgba(0, 0, 0, 0.14);
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  border-radius: 9999px;
+  background: linear-gradient(to right, #10b981 var(--fill, 0%), var(--track) var(--fill, 0%));
+  outline: none;
+}
+.dark .volume-slider {
+  --track: rgba(255, 255, 255, 0.15);
+}
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 9999px;
+  background: #10b981;
+  border: 2.5px solid #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+  cursor: none;
+}
+.volume-slider::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 9999px;
+  background: #10b981;
+  border: 2.5px solid #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+  cursor: none;
+}
+.volume-slider::-moz-range-track {
+  height: 6px;
+  border-radius: 9999px;
+  background: transparent;
+}
