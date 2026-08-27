@@ -49,16 +49,16 @@ export default function HomeContent({ stats, latestSignals }: HomeContentProps) 
       <header className="max-w-[1700px] mx-auto p-4 md:px-8 pt-6 flex items-center justify-center relative z-50">
         <div className="hidden md:flex items-center gap-3 shrink-0 text-sm font-bold tracking-widest uppercase">
           <span className="flex items-center gap-1 text-blue-300 bg-blue-900/40 px-4 py-2 rounded-full backdrop-blur-md border border-blue-400/20 shadow-[0_0_10px_rgba(59,130,246,0.3)] cursor-none hover:scale-110 duration-300 whitespace-nowrap">
-            主頁 HOME
+            主页 HOME
           </span>
           <span onClick={() => router.push('/signals')} className="opacity-70 hover:opacity-100 px-4 py-2 rounded-full transition-all duration-300 cursor-none hover:scale-110 hover:bg-blue-500/10 hover:text-blue-400 dark:hover:text-blue-300 hover:shadow-[0_0_12px_rgba(59,130,246,0.25)] whitespace-nowrap">
-            動態 SIGNAL
+            动态 SIGNAL
           </span>
           <span onClick={() => router.push('/gallery')} className="opacity-70 hover:opacity-100 px-4 py-2 rounded-full transition-all duration-300 cursor-none hover:scale-110 hover:bg-blue-500/10 hover:text-blue-400 dark:hover:text-blue-300 hover:shadow-[0_0_12px_rgba(59,130,246,0.25)] whitespace-nowrap">
             影像 GALLERY
           </span>
-          <span onClick={() => router.push('/profile')} className="opacity-70 hover:opacity-100 px-4 py-2 rounded-full transition-all duration-300 cursor-none hover:scale-110 hover:bg-blue-500/10 hover:text-blue-400 dark:hover:text-blue-300 hover:shadow-[0_0_12px_rgba(59,130,246,0.25)] whitespace-nowrap">
-            檔案 PROFILE
+          <span onClick={() => router.push('/profile')} className="opacity-70 hover:opacity-100 px-4 py-2 rounded-full transition-all duration-300 cursor-none hover:scale-110 hover:bg-blue-500/10 hover:text-blue-400 dark:hover:text-blue-30OTHOVER:SHADOW-[O_O_12PX_RGBA(59,13O,246,O.25)] WHITESPACE-NOWRAP">
+            档案 PROFILE
           </span>
         </div>
 
@@ -100,29 +100,29 @@ export default function HomeContent({ stats, latestSignals }: HomeContentProps) 
               <div className="text-[10px] font-bold tracking-widest opacity-40 mb-4 flex justify-between uppercase text-blue-200">
                 <span>Module Map</span><span>Signal</span>
               </div>
-              <h3 className="text-sm font-bold opacity-80 mb-4 dark:text-blue-50">數據看板</h3>
+              <h3 className="text-sm font-bold opacity-80 mb-4 dark:text-blue-50">数据看板</h3>
               <ul className="space-y-2">
                 <li>
                   <button onClick={() => router.push('/signals')} className="w-full flex items-center gap-3 bg-yellow-100 dark:bg-blue-600/30 dark:border dark:border-blue-400/20 p-2 rounded-lg font-bold text-sm text-yellow-800 dark:text-blue-100 shadow-[0_0_15px_rgba(37,99,235,0.1)] hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(37,99,235,0.25)] transition-all duration-300 cursor-none text-left">
-                    <span className="text-[10px] opacity-50">01</span> 總覽
+                    <span className="text-[10px] opacity-50">01</span> 总览
                     <span className="ml-auto flex items-center gap-1 text-[10px] bg-white/50 dark:bg-blue-900/50 px-2 rounded-full">{stats.total} <ChevronRight className="w-3 h-3" /></span>
                   </button>
                 </li>
                 <li>
                   <button onClick={() => router.push('/signals?type=short')} className="w-full flex items-center gap-3 p-2 rounded-lg font-bold text-sm opacity-60 dark:text-blue-200 hover:opacity-100 hover:bg-white/60 dark:hover:bg-blue-900/30 transition-all duration-300 cursor-none text-left">
-                    <span className="text-[10px]">02</span> 短動態
+                    <span className="text-[10px]">02</span> 短动态
                     <span className="ml-auto flex items-center gap-1 text-[10px]">{stats.short} <ChevronRight className="w-3 h-3" /></span>
                   </button>
                 </li>
                 <li>
                   <button onClick={() => router.push('/signals?type=long')} className="w-full flex items-center gap-3 p-2 rounded-lg font-bold text-sm opacity-60 dark:text-blue-200 hover:opacity-100 hover:bg-white/60 dark:hover:bg-blue-900/30 transition-all duration-300 cursor-none text-left">
-                    <span className="text-[10px]">03</span> 長文章
+                    <span className="text-[10px]">03</span> 长文章
                     <span className="ml-auto flex items-center gap-1 text-[10px]">{stats.long} <ChevronRight className="w-3 h-3" /></span>
                   </button>
                 </li>
                 <li>
                   <button onClick={() => router.push('/signals')} className="w-full flex items-center gap-3 p-2 rounded-lg font-bold text-sm opacity-60 dark:text-blue-200 hover:opacity-100 hover:bg-white/60 dark:hover:bg-blue-900/30 transition-all duration-300 cursor-none text-left">
-                    <span className="text-[10px]">04</span> 置頂區
+                    <span className="text-[10px]">04</span> 置顶区
                     <span className="ml-auto flex items-center gap-1 text-[10px]">0 <ChevronRight className="w-3 h-3" /></span>
                   </button>
                 </li>
@@ -186,7 +186,7 @@ export default function HomeContent({ stats, latestSignals }: HomeContentProps) 
                       {latestSignals.length === 0 ? (
                         <>
                           <div className="text-xs font-bold text-orange-400 dark:text-blue-400 mb-4 tracking-widest">CHANNEL IS QUIET</div>
-                          <h3 className="text-2xl font-black mb-3 dark:text-blue-50">時間線還沒有發出第一條信號。</h3>
+                          <h3 className="text-2xl font-black mb-3 dark:text-blue-50">时间线还没有发出一条信号。</h3>
                           <p className="text-sm opacity-60 leading-relaxed font-serif dark:text-blue-200">
                             框架已經搭好。以後寫下的短動態和長文章，會按時間出現在這裏。
                           </p>
