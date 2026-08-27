@@ -28,7 +28,6 @@ export default function RootLayout({
       <body className={inter.className}>
         <CustomCursor />
         <ClickRipple />
-        {/* 👇 把主題引擎套在最外面，包住音樂引擎和整個網站！ */}
         <ThemeProvider>
           <MusicProvider>
             {children}

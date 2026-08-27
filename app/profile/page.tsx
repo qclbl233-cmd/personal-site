@@ -83,12 +83,11 @@ export default function ProfilePage() {
         </div>
       </header>
 
-      {/* 🚀 核心修复：彻底删除了 !showTransition 封印！现在它一进来就会掉落！ */}
       <main className="relative z-20 flex justify-center px-4 pt-10 pb-24 min-h-[85vh]">
         <motion.div
           initial={{ opacity: 0, y: -700, rotate: -3, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, rotate: 0, scale: 1 }}
-          // 💡 这里的 delay: 0.8 是精髓！它会让卡片等结城理掉进水里后，刚好砸下来！(如果不准你可以微调这个 0.8)
+          // 💡 这里的 delay: 0.6 是精髓！它会让卡片等结城理掉进水里后，刚好砸下来！(如果不准你可以微调这个 0.6)
           transition={{ delay: 0.6, type: "spring", damping: 15, stiffness: 50 }}
           className="w-full max-w-4xl bg-white/10 backdrop-blur-2xl border border-white/30 rounded-3xl p-8 md:p-12 shadow-[0_20px_60px_rgba(0,0,0,0.4)] flex flex-col"
         >
@@ -102,7 +101,6 @@ export default function ProfilePage() {
                 <h1 className="text-3xl md:text-4xl font-black text-white tracking-widest drop-shadow-md">{siteConfig.author.name}</h1>
                 <p className="text-white/70 text-sm tracking-widest mt-1 uppercase">{siteConfig.author.handle} · Personal Space</p>
                 <div className="flex flex-wrap gap-x-6 gap-y-2 mt-4 text-[10px] text-white/80 tracking-widest uppercase font-bold">
-                  {/* 🚀 修复：移除了多余的 03.18 生日和频率，只保留定位 */}
                   <span className="flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5" /> {RESUME.location}</span>
                 </div>
               </div>

@@ -225,7 +225,7 @@ export default function Gallery() {
         )}
       </main>
 
-      {/* 🗑️ 删除确认弹窗（页面内实现，自定义光标可正常显示） */}
+      {/* 🗑️ 删除确认弹窗 */}
       {deleteTarget && (
         <div className="fixed inset-0 z-[900] flex items-center justify-center bg-black/40 backdrop-blur-sm px-4">
           <motion.div

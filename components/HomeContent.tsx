@@ -136,7 +136,6 @@ export default function HomeContent({ stats, latestSignals }: HomeContentProps) 
           {/* ── 中列：hero 大卡 + 最近信號 ── */}
           <div className="md:col-span-3 flex flex-col gap-6">
             
-            {/* 🚀 极其纯净的 Hero 大卡片：只留背景图、Welcome、纯色压边条 */}
             <motion.div variants={itemVariants} className="bento-card flex flex-col justify-end overflow-hidden relative min-h-[420px] h-full shadow-[0_0_40px_rgba(0,0,0,0.3)] dark:border-[#353f75] dark:shadow-[inset_0_0_30px_rgba(167,139,250,0.15)]">
                <img src="/YUI.png" alt="Day Background" className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none transition-opacity duration-700 ease-in-out dark:opacity-0" />
                <img src="/Azusa.png" alt="Night Background" className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none transition-opacity duration-700 ease-in-out opacity-0 dark:opacity-100" />
