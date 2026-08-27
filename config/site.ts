@@ -4,7 +4,7 @@ export const siteConfig = {
   // 1. 个人基础信息
   author: {
     name: "Sunshine",
-    handle: "生命的长度，即是春天的长短",
+    handle: "生命的长度，即是春天的长短。",
     avatar: "/nira.png", // 以后这里可以换成图片链接，比如 "/avatar.jpg"
     bio: "“”",
     freq: "03.18",
