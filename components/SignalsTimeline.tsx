@@ -12,8 +12,8 @@ export type Filter = "all" | "short" | "long";
 
 const FILTERS: { key: Filter; label: string }[] = [
   { key: "all", label: "全部" },
-  { key: "short", label: "短動態" },
-  { key: "long", label: "長文章" },
+  { key: "short", label: "短动态" },
+  { key: "long", label: "长文章" },
 ];
 
 function formatDay(date: Date) {
@@ -59,7 +59,7 @@ export default function SignalsTimeline({ signals, allSignals, initialFilter }: 
         <div className="hidden md:flex items-center gap-3 shrink-0 text-sm font-bold tracking-widest uppercase">
           <span onClick={() => router.push('/')} className="opacity-70 hover:opacity-100 px-4 py-2 rounded-full transition-all duration-300 cursor-none hover:scale-110 hover:bg-blue-500/10 hover:text-blue-400 dark:hover:text-blue-300 hover:shadow-[0_0_12px_rgba(59,130,246,0.25)] whitespace-nowrap">主頁 HOME</span>
           <span className="flex items-center gap-1 text-blue-300 bg-blue-900/40 px-4 py-2 rounded-full backdrop-blur-md border border-blue-400/20 shadow-[0_0_10px_rgba(59,130,246,0.3)] cursor-none hover:scale-110 duration-300 whitespace-nowrap">
-            動態 SIGNAL
+            动态 SIGNAL
           </span>
           <span onClick={() => router.push('/gallery')} className="opacity-70 hover:opacity-100 px-4 py-2 rounded-full transition-all duration-300 cursor-none hover:scale-110 hover:bg-blue-500/10 hover:text-blue-400 dark:hover:text-blue-300 hover:shadow-[0_0_12px_rgba(59,130,246,0.25)] whitespace-nowrap">影像 GALLERY</span>
           <span onClick={() => router.push('/profile')} className="opacity-70 hover:opacity-100 px-4 py-2 rounded-full transition-all duration-300 cursor-none hover:scale-110 hover:bg-blue-500/10 hover:text-blue-400 dark:hover:text-blue-300 hover:shadow-[0_0_12px_rgba(59,130,246,0.25)] whitespace-nowrap">檔案 PROFILE</span>
@@ -81,8 +81,8 @@ export default function SignalsTimeline({ signals, allSignals, initialFilter }: 
           <div className="flex items-center gap-2 text-[10px] font-bold opacity-50 tracking-widest uppercase mb-3 dark:text-blue-200">
             <Radio className="w-3.5 h-3.5" /> Signal Log / {String(counts.all).padStart(4, "0")}
           </div>
-          <h1 className="text-3xl md:text-4xl font-black tracking-tight text-[#1b2554] dark:text-white mb-2">個人動態</h1>
-          <p className="text-sm opacity-60 font-serif italic dark:text-blue-200">短動態與長文章，按時間出現在這裡。</p>
+          <h1 className="text-3xl md:text-4xl font-black tracking-tight text-[#1b2554] dark:text-white mb-2">个人动态</h1>
+          <p className="text-sm opacity-60 font-serif italic dark:text-blue-200">短动态与长文章，按时间出现在这里。</p>
         </motion.div>
 
         {/* 筛选栏 */}
@@ -121,7 +121,7 @@ export default function SignalsTimeline({ signals, allSignals, initialFilter }: 
           onClick={() => router.push('/')}
           className="mt-12 flex items-center gap-1 text-[10px] font-bold tracking-widest uppercase opacity-50 hover:opacity-100 hover:text-blue-400 transition-colors cursor-none"
         >
-          <ArrowLeft className="w-3.5 h-3.5" /> 回到主頁
+          <ArrowLeft className="w-3.5 h-3.5" /> 回到主页
         </button>
       </main>
     </div>
@@ -159,7 +159,7 @@ function SignalRow({ signal, isLast }: { signal: Signal; isLast: boolean }) {
                 ? "bg-blue-100 dark:bg-blue-600/30 text-blue-700 dark:text-blue-200"
                 : "bg-yellow-100 dark:bg-yellow-500/20 text-yellow-700 dark:text-yellow-200"
             }`}>
-              {isLong ? "長文章" : "短動態"}
+              {isLong ? "长文章" : "短动态"}
             </span>
             <span className="text-[10px] opacity-40 tracking-widest flex items-center gap-1 dark:text-blue-200">
               <CalendarDays className="w-3 h-3" /> {date.getFullYear()}.{formatDay(date)} {formatTime(date)}
@@ -204,7 +204,7 @@ function LongCardBody({ signal }: { signal: Signal }) {
           onClick={() => router.push(`/signals/${signal.slug}`)}
           className="mt-3 inline-flex items-center gap-1 text-[10px] font-bold tracking-widest text-blue-500 dark:text-blue-400 hover:gap-2 transition-all cursor-none"
         >
-          閱讀全文 <ChevronRight className="w-3 h-3" />
+          阅读全文 <ChevronRight className="w-3 h-3" />
         </button>
       </div>
     </div>

@@ -20,7 +20,7 @@ export default function SignalDetail({ signal }: { signal: Signal }) {
         <div className="hidden md:flex items-center gap-3 shrink-0 text-sm font-bold tracking-widest uppercase">
           <span onClick={() => router.push('/')} className="opacity-70 hover:opacity-100 px-4 py-2 rounded-full transition-all duration-300 cursor-none hover:scale-110 hover:bg-blue-500/10 hover:text-blue-400 dark:hover:text-blue-300 hover:shadow-[0_0_12px_rgba(59,130,246,0.25)] whitespace-nowrap">主頁 HOME</span>
           <span onClick={() => router.push('/signals')} className="flex items-center gap-1 text-blue-300 bg-blue-900/40 px-4 py-2 rounded-full backdrop-blur-md border border-blue-400/20 shadow-[0_0_10px_rgba(59,130,246,0.3)] cursor-none hover:scale-110 duration-300 whitespace-nowrap">
-            動態 SIGNAL
+            动态 SIGNAL
           </span>
           <span onClick={() => router.push('/gallery')} className="opacity-70 hover:opacity-100 px-4 py-2 rounded-full transition-all duration-300 cursor-none hover:scale-110 hover:bg-blue-500/10 hover:text-blue-400 dark:hover:text-blue-300 hover:shadow-[0_0_12px_rgba(59,130,246,0.25)] whitespace-nowrap">影像 GALLERY</span>
           <span onClick={() => router.push('/profile')} className="opacity-70 hover:opacity-100 px-4 py-2 rounded-full transition-all duration-300 cursor-none hover:scale-110 hover:bg-blue-500/10 hover:text-blue-400 dark:hover:text-blue-300 hover:shadow-[0_0_12px_rgba(59,130,246,0.25)] whitespace-nowrap">檔案 PROFILE</span>
@@ -42,7 +42,7 @@ export default function SignalDetail({ signal }: { signal: Signal }) {
           onClick={() => router.push('/signals')}
           className="flex items-center gap-1 text-[10px] font-bold tracking-widest uppercase opacity-50 hover:opacity-100 hover:text-blue-400 transition-colors cursor-none mb-6"
         >
-          <ArrowLeft className="w-3.5 h-3.5" /> 返回動態
+          <ArrowLeft className="w-3.5 h-3.5" /> 返回动态
         </button>
 
         <motion.article
@@ -67,7 +67,7 @@ export default function SignalDetail({ signal }: { signal: Signal }) {
                   ? "bg-blue-100 dark:bg-blue-600/30 text-blue-700 dark:text-blue-200"
                   : "bg-yellow-100 dark:bg-yellow-500/20 text-yellow-700 dark:text-yellow-200"
               }`}>
-                {isLong ? "長文章" : "短動態"}
+                {isLong ? "长文章" : "短动态"}
               </span>
               <span className="text-[10px] opacity-40 tracking-widest flex items-center gap-1 dark:text-blue-200">
                 <CalendarDays className="w-3 h-3" /> {date.getFullYear()}.{String(date.getMonth() + 1).padStart(2, "0")}.{String(date.getDate()).padStart(2, "0")} {String(date.getHours()).padStart(2, "0")}:{String(date.getMinutes()).padStart(2, "0")}
